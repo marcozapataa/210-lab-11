@@ -40,3 +40,23 @@ int main() {
 
     return 0;
 }
+
+// Function definition for inputRacer
+void inputRacer(Racer * rptr) {
+    static int nrRac = 1;  // tracks the racer input number across function calls
+    cout << "Input data for Racer #" << nrRac << ":\n";
+    cout << "Race Number: ";
+    cin >> rptr->raceNumber;
+
+    cout << "Placement: ";
+    cin >> rptr->placement;
+
+    // Dynamically allocate the inner array for lap times in the struct
+    rptr->lapTimes = new double[NR_LAPS];
+    for (int i = 0; i < NR_LAPS; i++) {
+        cout << "Lap #" << i + 1 << " Time: ";
+        cin >> rptr->lapTimes[i];
+    }
+    cout << endl << endl;
+    nrRac++;
+}
