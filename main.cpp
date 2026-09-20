@@ -17,8 +17,25 @@ struct Racer {
     }
 };
 
+// Function prototypes
+void inputRacer(Racer *);
+void displayRacer(Racer *);
+
 
 int main() {
+    // Dynamically allocating the outer array of structs
+    Racer *roster = new Racer[NR_RACERS];
+
+    // Input loop
+    for (int i = 0; i < NR_RACERS; i++)
+        inputRacer(&roster[i]);
+
+    // Display loop
+    for (int i = 0; i < NR_RACERS; i++)
+        displayRacer(&roster[i]);
+
+    // Clean up outer dynamic array
+    delete [] roster;
 
 
     return 0;
