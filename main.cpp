@@ -60,3 +60,17 @@ void inputRacer(Racer * rptr) {
     cout << endl << endl;
     nrRac++;
 }
+
+// Function definition for displayRacer
+void displayRacer(Racer * rptr) {
+    cout << "----- Racer Summary -----\n";
+    cout << "    Racer Number:" << rptr->raceNumber << endl;
+    cout << "    Final Placement: " << rptr->placement << endl;
+    
+    // Loop through the array to display each lap time
+    for (int i = 0; i < NR_LAPS; i++) {
+        cout << "Lap # " << i + 1 << ": "
+             << rptr->lapTimes[i] << endl;
+    }
+    cout << endl;
+}
